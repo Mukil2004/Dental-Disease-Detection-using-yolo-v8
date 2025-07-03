@@ -1,0 +1,46 @@
+# YOLOv8 Experiment Configuration
+name: dental_calculus_detection
+
+# Paths to training and validation datasets
+train: D:\mini project\dental-disease-yolov8-24-03-2025\dataset\Caries_Gingivitus_ToothDiscoloration_Ulcer-yolo_annotated-Dataset\Caries_Gingivitus_ToothDiscoloration_Ulcer-yolo_annotated-Dataset\Data\images\train
+val: D:\mini project\dental-disease-yolov8-24-03-2025\dataset\Caries_Gingivitus_ToothDiscoloration_Ulcer-yolo_annotated-Dataset\Caries_Gingivitus_ToothDiscoloration_Ulcer-yolo_annotated-Dataset\Data\images\val
+
+# Number of classes
+nc: 4
+
+# Class names
+names: ['Caries', 'Ulcer', 'Tooth Discoloration', 'Gingivitis']
+
+# Hyperparameters
+hyperparameters:
+  lr0: 0.01          # Initial learning rate
+  lrf: 0.0001        # Final learning rate (cosine decay)
+  momentum: 0.937    # Momentum for SGD optimizer
+  weight_decay: 0.0005  # Regularization parameter
+  warmup_epochs: 3   # Warmup epochs
+
+  # Loss coefficients
+  box: 1.0           # Box regression loss weight
+  cls: 1.0           # Classification loss weight
+  obj: 1.0           # Objectness loss weight
+
+# Augmentation parameters
+augmentation:
+  fliplr: 0.5        # Horizontal flip probability
+  hsv_h: 0.1         # Hue augmentation (color jitter)
+  hsv_s: 0.1         # Saturation augmentation
+  hsv_v: 0.1         # Brightness (value) augmentation
+  translate: 0.5     # Image translation (cropping/shifting)
+  scale: 0.5         # Image scaling (resize)
+  blur: 0.1          # Gaussian blur augmentation
+  mosaic: 1.0        # Mosaic augmentation probability
+  mixup: 0.2         # MixUp augmentation probability
+
+# Training configuration
+train_params:
+  batch_size: 16        # Batch size
+  epochs: 100           # Number of training epochs
+  imgsz: 640            # Input image size
+  patience: 10          # Early stopping patience
+  optimizer: SGD        # Optimizer (SGD or AdamW)
+  scheduler: cosine     # Learning rate scheduler
