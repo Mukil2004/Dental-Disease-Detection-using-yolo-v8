@@ -83,9 +83,9 @@ python detect.py --weights weights/best.pt --source your_image.jpg --output-dir 
 
 Trained using YOLOv8 on photographic dental images with 4 classes.
 
-### 🔹 Training Curve
+### 🔹 Results Curve
 
-![Training Curve](training_info/train.jpg)
+![Results Curve](training_info/results.png)
 
 ### 🔹 Confusion Matrix
 
@@ -93,7 +93,7 @@ Trained using YOLOv8 on photographic dental images with 4 classes.
 
 ### 🔹 PR Curve
 
-![PR Curve](training_info/pr_curve_all_classes.png)
+![PR Curve](training_info/PR_curve.png)
 
 ---
 
